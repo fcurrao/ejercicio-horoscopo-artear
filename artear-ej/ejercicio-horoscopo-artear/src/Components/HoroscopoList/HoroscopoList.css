@@ -1,0 +1,30 @@
+.fitcontent{
+width: fit-content;
+}
+.w-40{
+    width: 48%; 
+    
+}
+
+.w-88{ 
+    /* justify-content: center; */
+}
+
+.grilla {
+    height: fit-content;
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    align-content: center;
+}
+.lista {
+    height: fit-content;
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    align-content: center;
+}
