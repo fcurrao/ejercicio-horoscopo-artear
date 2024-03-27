@@ -28,7 +28,7 @@ export const HoroscopoList = ({ dataHoroscopo }) => {
 
                             :
                             <>
-                    <div key={index} className={`card ${valueViewBy === 'grilla' ? 'w-40 m-2 justify-content-center ' : 'w-88'}  d-flex flex-row flex-wrap m-2 border border-dark shadow p-3 mb-5 bg-body rounded align-items-center`}>                                    
+                    <div key={index} className={`card ${valueViewBy === 'grilla' ? 'w-40 m-2 justify-content-center ' : ''}  d-flex flex-row flex-wrap m-2 border border-dark shadow p-3 mb-5 bg-body rounded align-items-center`}>                                    
                                 <div className="row g-0">
                                         <div className="col-md-4 d-flex flex-column  align-items-center fitcontent"> 
                                             <h2 className="card-title m-2">{eachHoroscopo.name}</h2>
