@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       <HoroscopoContextProvider>
-        <div className="">
-          <h1>Horóscopo</h1>
+        <div >
+          <h1 className="m-2">Horóscopo</h1>
           <SearchBar />
           <HoroscopoListContainer />
         </div>
