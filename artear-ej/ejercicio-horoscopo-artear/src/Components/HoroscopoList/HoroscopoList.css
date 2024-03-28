@@ -1,24 +1,29 @@
-.fitcontent{
-width: fit-content;
-}
-.w-40{
-    width: 48%; 
-    
+.fitcontent {
+    width: fit-content;
 }
 
+.w-40 {
+    width: 48%;
+
+}
+
+.yy {
+    background-color: #b5b51552 !important;
+}
 
 .grilla {
     height: fit-content;
-    display: flex; 
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: center;
     align-content: center;
 }
+
 .lista {
     height: fit-content;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: stretch;

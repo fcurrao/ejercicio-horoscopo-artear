@@ -17,7 +17,7 @@ export const HoroscopoList = ({ dataHoroscopo }) => {
                     <>
                         {(index == 0) ?
                             <>
-                                <div className='card p-2 d-flex flex-row flex-wrap m-2 border-3 border-dark shadow-lg p-3 mb-5 bg-body rounded justify-content-between' >
+                                <div className='card p-2 d-flex flex-row flex-wrap m-2 border-3 border-dark shadow-lg p-3 mb-5 bg-body  rounded justify-content-between yy' >
                                     <img className='img w-25' src={"../../../public/" + eachHoroscopo.image} />
                                     <div className="col-md-8">
                                         <div className="card-body">
