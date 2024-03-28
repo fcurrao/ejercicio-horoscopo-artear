@@ -3,11 +3,12 @@ import reactLogo from '../../assets/react.svg'
 import "./HoroscopoListContainer.css";
 import { HoroscopoList } from "../HoroscopoList/HoroscopoList.jsx";
 import { useContext } from "react";
+import { NotFound} from "../NotFound/NotFound.jsx"
 import { HoroscopoContext } from "../../context/HoroscopoContextProvider.jsx";
 
 
 export const HoroscopoListContainer = () => {
-    const { valueOrderBy , searchHoroscopo} = useContext(HoroscopoContext);
+    const { valueOrderBy, searchHoroscopo } = useContext(HoroscopoContext);
     const [isLoading, setIsLoading] = useState(true);
     const [dataHoroscopoSearch, setDataHoroscopoSearch] = useState([]);
     const [dataHoroscopo, setDataHoroscopo] = useState([]);
@@ -15,15 +16,16 @@ export const HoroscopoListContainer = () => {
     const DATA = 'zodiac_signs';
 
 
-    const searchbarHoroscopo = (searchHoroscopo) => { 
-        
+    const searchbarHoroscopo = (searchHoroscopo) => {
+
         console.log("texto de busqueda:", searchHoroscopo)
         const filteredHoroscopos = dataHoroscopo.filter(horoscopo =>
             horoscopo.name.toLowerCase().includes(searchHoroscopo.toLowerCase())
         );
-        setDataHoroscopoSearch(filteredHoroscopos);  
+        setDataHoroscopoSearch(filteredHoroscopos);
+        console.log("DATAhorosco",dataHoroscopoSearch )
     };
-    
+
 
     const moveTodayToFirst = (data) => {
         const today = new Date();
@@ -42,22 +44,22 @@ export const HoroscopoListContainer = () => {
         return data;
     };
 
-    const ordenSetting = ()=>{    
-        if(valueOrderBy === 'today'){
+    const ordenSetting = () => {
+        if (valueOrderBy === 'today') {
             getDataHoroscopoByApi()
             console.log("asd", dataHoroscopo)
         }
-        if(valueOrderBy === 'fecha'){
+        if (valueOrderBy === 'fecha') {
             const sortByDate = (a, b) => {
                 const dateA = new Date(`2022-${a.init_date.split('-').reverse().join('-')}`);
                 const dateB = new Date(`2022-${b.init_date.split('-').reverse().join('-')}`);
                 return dateA - dateB;
             };
-            
+
             const horoscoposOrdenadosPorFecha = dataHoroscopo.slice().sort(sortByDate);
             setDataHoroscopo(horoscoposOrdenadosPorFecha)
             console.log(horoscoposOrdenadosPorFecha);
-        } if (valueOrderBy === 'alfabetico' ){
+        } if (valueOrderBy === 'alfabetico') {
             const sortByNombre = (a, b) => {
                 const nombreA = a.name.toUpperCase();
                 const nombreB = b.name.toUpperCase();
@@ -69,7 +71,7 @@ export const HoroscopoListContainer = () => {
                 }
                 return 0;
             };
-            
+
             const horoscoposOrdenadosPorNombre = dataHoroscopo.slice().sort(sortByNombre);
             setDataHoroscopo(horoscoposOrdenadosPorNombre)
             console.log(horoscoposOrdenadosPorNombre);
@@ -99,6 +101,7 @@ export const HoroscopoListContainer = () => {
             const data = await response.json();
             const horoscoposOrdenados = moveTodayToFirst(data);
             setDataHoroscopo(horoscoposOrdenados);
+            setDataHoroscopoSearch(horoscoposOrdenados);
             setIsLoading(false)
             // setDataHoroscopo(data)
             console.log(dataHoroscopo); //! asdasd
@@ -120,14 +123,14 @@ export const HoroscopoListContainer = () => {
     return (<div className="d-flex flex-wrap justify-content-center">
         {/* {isLoading ? <h2>Cargando productos ...</h2> : <HoroscopoList products={products} />} */}
 
-
-        {isLoading ?
-            <div className="d-flex align-items-center justify-content-center w-100 m-5">
-                <img src={reactLogo} className="logo react spin" alt="React logo" /><h2>Cargando productos ...</h2>
-            </div>
-            :
-            (searchHoroscopo !== "") ?    <HoroscopoList className="d-flex cred" dataHoroscopo={dataHoroscopoSearch} />  :
-            <HoroscopoList className="d-flex cred" dataHoroscopo={dataHoroscopo} />}
-
+        {dataHoroscopoSearch.length === 0 ? <NotFound/> : <>
+            {isLoading ?
+                <div className="d-flex align-items-center justify-content-center w-100 m-5">
+                    <img src={reactLogo} className="logo react spin" alt="React logo" /><h2>Cargando productos ...</h2>
+                </div>
+                :
+                (searchHoroscopo !== "") ? <HoroscopoList className="d-flex cred" dataHoroscopo={dataHoroscopoSearch} /> :
+                    <HoroscopoList className="d-flex cred" dataHoroscopo={dataHoroscopo} />}
+        </>}
     </div>)
 };

@@ -34,20 +34,35 @@ export const Navbar = () => {
         }
     };
 
-   
+   useEffect(()=>{
 
-    return (<div className="d-flex justify-content-evenly">
+    const screenWidth = window.innerWidth;  
+    console.log(screenWidth)
+   },)
 
-        <div className="d-flex justify-content-space-evenly align-items-center">
+    return (<div className="d-flex flex-row flex-wrap justify-content-evenly"> 
+    {window.innerWidth<499 ? <>
+        <div className="d-flex flex-row flex-wrap justify-content-center align-items-center">
             <h4 style={{ width: '12em' }} >Ver como</h4>
-            <select className="form-select" onChange={(e) => setValueViewBy(e.target.value)}>
+            <select className="form-select fs-5" onChange={(e) => setValueViewBy(e.target.value)}>
                 <option value="grilla" >Grilla</option>
                 <option value="lista">Lista</option>
             </select>
             {(valueViewBy === "grilla") ? <FontAwesomeIcon className="m-4 fa-2x" icon={faTableCellsLarge} /> : (valueViewBy === "lista") ? <FontAwesomeIcon className="m-4  fa-2x" icon={faList} /> : ""}
         </div>
+    </>: <>
+    <div className="d-flex flex-row flex-nowrap justify-content-center align-items-center">
+            <h4 style={{ width: '12em' }} >Ver como</h4>
+            <select className="form-select fs-5" onChange={(e) => setValueViewBy(e.target.value)}>
+                <option value="grilla" >Grilla</option>
+                <option value="lista">Lista</option>
+            </select>
+            {(valueViewBy === "grilla") ? <FontAwesomeIcon className="m-4 fa-2x" icon={faTableCellsLarge} /> : (valueViewBy === "lista") ? <FontAwesomeIcon className="m-4  fa-2x" icon={faList} /> : ""}
+        </div>
+    </>}
+        
 
-        <div className="d-flex justify-content-space-evenly align-items-center">
+        <div className="d-flex flex-row flex-wrap justify-content-center align-items-center">
             <h4 style={{ width: 'auto', margin: '1em' }} >Orden</h4>
             <input
                 type="checkbox"
@@ -78,9 +93,9 @@ export const Navbar = () => {
             <h5 className="form-check-label m-1">Fecha</h5>
         </div>
 
-        <div className="d-flex justify-content-space-evenly align-items-center">
+        <div className="d-flex flex-row flex-wrap justify-content-center align-items-center">
             <FontAwesomeIcon className="m-4 fa-2x" icon={faMagnifyingGlass} />
-            <input className="form-input" onInput={(e)=>handleSearch(e)} placeholder='Buscar por signo..'>
+            <input className="form-input fs-5" onInput={(e)=>handleSearch(e)} placeholder='Buscar por signo..'>
 
             </input>
         </div>

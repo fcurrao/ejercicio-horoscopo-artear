@@ -7,6 +7,7 @@ export const HoroscopoList = ({ dataHoroscopo }) => {
     
     const { valueViewBy , valueOrderBy} = useContext(HoroscopoContext);
  
+    
    
 
 
