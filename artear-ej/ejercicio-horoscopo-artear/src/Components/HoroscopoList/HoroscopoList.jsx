@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
-import { useContext } from "react";
+import { useContext , useEffect} from "react";
 import { HoroscopoContext } from "../../context/HoroscopoContextProvider.jsx";
 import "./HoroscopoList.css";
 
 export const HoroscopoList = ({ dataHoroscopo }) => {
     
-    const { valueViewBy } = useContext(HoroscopoContext);
+    const { valueViewBy , valueOrderBy} = useContext(HoroscopoContext);
+ 
+   
 
 
     return (
@@ -32,7 +34,7 @@ export const HoroscopoList = ({ dataHoroscopo }) => {
                                 <div className={` ${valueViewBy === 'grilla' ? ' justify-content-center ' : ''} row g-0`} >
                                         <div className="col-md-4 d-flex flex-column  align-items-center fitcontent"> 
                                             <h2 className="card-title m-2">{eachHoroscopo.name}</h2>
-                                            <img style={{width: "15%;"}}  className='img-fluid m-2 ' src={"../../../public/" + eachHoroscopo.image} alt={eachHoroscopo.name} />
+                                            <img style={{width: "15%"}}  className='img-fluid m-2 ' src={"../../../public/" + eachHoroscopo.image} alt={eachHoroscopo.name} />
                                         </div>
                                         <div className="col-md-8 d-flex align-items-center">
                                             <div className="card-body ">

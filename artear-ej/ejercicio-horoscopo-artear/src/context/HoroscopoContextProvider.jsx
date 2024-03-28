@@ -8,6 +8,7 @@ export const HoroscopoContextProvider = ({ children }) => {
   
 const [valueViewBy, setValueViewBy] = useState("grilla")
 const [valueOrderBy, setValueOrderBy] = useState("today")
+const [searchHoroscopo, setSearchHoroscopo] = useState("")
 //   const [totalItems, setTotalItems] = useState(0);
 //   const [total, setTotal] = useState(0);
 
@@ -71,6 +72,8 @@ const [valueOrderBy, setValueOrderBy] = useState("today")
     setValueViewBy,
     valueOrderBy,
     setValueOrderBy,
+    setSearchHoroscopo,
+    searchHoroscopo,
   };
 
   return <HoroscopoContext.Provider  value={objectValues}>  {children} </HoroscopoContext.Provider>;

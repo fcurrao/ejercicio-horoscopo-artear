@@ -1,6 +1,6 @@
 import { HoroscopoContextProvider } from "./context/HoroscopoContextProvider.jsx";
-import { HoroscopoListContainer } from "../src/Components/HoroscopoListContainer/HoroscopoListContainer.jsx";
-import { SearchBar } from "../src/Components/SearchBar/SearchBar.jsx";
+import { HoroscopoListContainer } from "../src/Components/HoroscopoListContainer/HoroscopoListContainer.jsx"; 
+import { Navbar } from "./Components/Navbar/Navbar.jsx";
 import './App.css'
 
 function App() { 
@@ -10,7 +10,7 @@ function App() {
       <HoroscopoContextProvider>
         <div >
           <h1 className="m-2">Horóscopo</h1>
-          <SearchBar />
+          <Navbar />
           <HoroscopoListContainer />
         </div>
       </HoroscopoContextProvider>
