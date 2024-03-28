@@ -40,7 +40,7 @@ export const Navbar = () => {
     console.log(screenWidth)
    },)
 
-    return (<div className="d-flex flex-row flex-wrap justify-content-evenly"> 
+    return (<div className="bg-info d-flex flex-row flex-wrap justify-content-evenly"> 
     {window.innerWidth<499 ? <>
         <div className="d-flex flex-row flex-wrap justify-content-center align-items-center">
             <h4 style={{ width: '12em' }} >Ver como</h4>
