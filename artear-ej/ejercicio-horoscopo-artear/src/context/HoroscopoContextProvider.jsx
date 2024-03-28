@@ -1,9 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 
-// Creamos el contexto
 export const HoroscopoContext = createContext(null);
 
-// Creamos el provider
 export const HoroscopoContextProvider = ({ children }) => { 
   
 const [valueViewBy, setValueViewBy] = useState("grilla")
