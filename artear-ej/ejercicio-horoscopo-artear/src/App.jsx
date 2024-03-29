@@ -1,21 +1,28 @@
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { HoroscopoContextProvider } from "./context/HoroscopoContextProvider.jsx";
-import { HoroscopoListContainer } from "../src/Components/HoroscopoListContainer/HoroscopoListContainer.jsx"; 
+import { Home } from "./Components/Home/Home.jsx";
 import { Navbar } from "./Components/Navbar/Navbar.jsx";
+import { DetailsHoroscopo } from "./Components/DetailsHoroscopo/DetailsHoroscopo.jsx";
+import { NotFound } from "./Components/NotFound/NotFound.jsx";
 import { Footer } from "./Components/Footer/Footer.jsx";
 import './App.css'
 
-function App() { 
+function App() {
 
   return (
     <>
       <HoroscopoContextProvider>
-        <div >
-          <h1 className="m-2">Horóscopo</h1>
+        <BrowserRouter>
+          <Link to="/"><h1 className="bg-primary p-4 text-black">Horóscopo</h1></Link>
           <Navbar />
-          <HoroscopoListContainer />
-        </div>
-      </HoroscopoContextProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/:id" element={<DetailsHoroscopo />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
           <Footer />
+        </BrowserRouter>
+      </HoroscopoContextProvider>
     </>
   )
 }
