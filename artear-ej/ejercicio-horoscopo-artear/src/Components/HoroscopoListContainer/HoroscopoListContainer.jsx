@@ -51,33 +51,30 @@ export const HoroscopoListContainer = () => {
 
     // funcion que ordena por fecha, alfabeticamente o por dia de hoy.
     const ordenSetting = () => {
-        if (valueOrderBy === 'today') {
-            moveTodayToFirst(dataHoroscopo)
-        }
-        // aca aplico el reverse para daar vuelta la fecha de DD-MM a MM-DD 
-        if (valueOrderBy === 'fecha') {
-            const sortByDate = (a, b) => {
-                const dateA = new Date(`${a.init_date.split('-').reverse().join('-')}`);
-                const dateB = new Date(`${b.init_date.split('-').reverse().join('-')}`);
-                return dateA - dateB;
-            };
-            const horoscopoOrderByDate = dataHoroscopo.slice().sort(sortByDate);
-            setDataHoroscopo(horoscopoOrderByDate)
-            // aca ordena por orden alfabetico comparado con la propiedad name
-        } if (valueOrderBy === 'alfabetico') {
-            const sortByNombre = (a, b) => {
-                const moteA = a.name.toUpperCase();
-                const moteB = b.name.toUpperCase();
-                if (moteA < moteB) {
-                    return -1;
-                }
-                if (moteA > moteB) {
-                    return 1;
-                }
-                return 0;
-            };
-            const horoscopoOrderByName = dataHoroscopo.slice().sort(sortByNombre);
-            setDataHoroscopo(horoscopoOrderByName)
+        switch (valueOrderBy) {
+            case 'today':
+                setDataHoroscopo(moveTodayToFirst(dataHoroscopo));
+                break;
+            case 'fecha':
+                const sortByDate = (a, b) => {
+                    const dateA = new Date(`${a.init_date.split('-').reverse().join('-')}`);
+                    const dateB = new Date(`${b.init_date.split('-').reverse().join('-')}`);
+                    return dateA - dateB;
+                };
+                const horoscopoOrderByDate = dataHoroscopo.slice().sort(sortByDate);
+                setDataHoroscopo(horoscopoOrderByDate);
+                break;
+            case 'alfabetico':
+                const sortByNombre = (a, b) => {
+                    const moteA = a.name.toUpperCase();
+                    const moteB = b.name.toUpperCase();
+                    return moteA < moteB ? -1 : moteA > moteB ? 1 : 0;
+                };
+                const horoscopoOrderByName = dataHoroscopo.slice().sort(sortByNombre);
+                setDataHoroscopo(horoscopoOrderByName);
+                break;
+            default:
+                break;
         }
     }
 

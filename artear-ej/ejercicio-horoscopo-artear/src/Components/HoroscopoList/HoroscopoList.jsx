@@ -15,7 +15,7 @@ export const HoroscopoList = ({ dataHoroscopo }) => {
             <div className={valueViewBy == 'grilla' ? 'grilla' : 'lista'}>
                 {dataHoroscopo && dataHoroscopo.map((eachHoroscopo, index) => (
                     <>
-                        {(index == 0) ?
+                        {(index === 0) ?
                             <>    <Link to={`/${eachHoroscopo.id}`} key={eachHoroscopo.id} className='card firstOne' >
                                 <img className='img w-15' src={"../../../public/" + eachHoroscopo.image} />
                                 <div className="col-md-8 d-flex align-items -center">

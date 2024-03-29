@@ -4,7 +4,7 @@ import { useContext, useState, useEffect } from "react";
 import { HoroscopoContext } from "../../context/HoroscopoContextProvider.jsx";
 import './Navbar.css'
 export const Navbar = () => {
-    const { valueViewBy, setValueViewBy, valueOrderBy, setValueOrderBy, setSearchHoroscopo, searchHoroscopo } = useContext(HoroscopoContext);
+    const { valueViewBy, setValueViewBy, valueOrderBy, setValueOrderBy, setSearchHoroscopo } = useContext(HoroscopoContext);
 
     const handleSearch = (event) => {
         if (event.keyCode === 8) {
@@ -12,7 +12,6 @@ export const Navbar = () => {
         }
         const searchText = event.target.value;
         setSearchHoroscopo(searchText);
-
     };
 
     const cleanSerch = () => {
@@ -25,27 +24,12 @@ export const Navbar = () => {
         const newViewBy = valueViewBy === "lista" ? "grilla" : "lista";
         setValueViewBy(newViewBy);
         document.getElementById("selectView").value = newViewBy;
-
     }
 
 
     const handleCheckbox = (e) => {
-        switch (e.target.value) {
-            case "today":
-                setValueOrderBy('today')
-                // cleanSerch()
-                break;
-            case "alfabetico":
-                setValueOrderBy('alfabetico')
-                break;
-            case "fecha":
-                setValueOrderBy('fecha')
-                break;
-        }
+        setValueOrderBy(e.target.value)
     };
-
-    useEffect(() => {
-    }, [])
 
     return (<div className="p-2 bg-info d-flex flex-row flex-wrap justify-content-evenly">
         {window.innerWidth < 499 ? <>
@@ -67,7 +51,6 @@ export const Navbar = () => {
                 {(valueViewBy === "grilla") ? <div value="grilla" className="btnbtn" onClick={(e) => ChangeView(e)}><FontAwesomeIcon className="m-4 fa-2x " icon={faTableCellsLarge} /></div> : (valueViewBy === "lista") ? <div className="btnbtn" value="lista" onClick={(e) => ChangeView(e)}><FontAwesomeIcon className="m-4 fa-2x" icon={faList} /></div> : ""}
             </div>
         </>}
-
 
         <div className="d-flex flex-row flex-wrap justify-content-center align-items-center">
             <h4 style={{ width: 'auto', margin: '1em' }} >Orden</h4>
@@ -103,10 +86,8 @@ export const Navbar = () => {
         <div className="d-flex flex-row flex-wrap justify-content-center align-items-center btnbtn">
             <FontAwesomeIcon onClick={cleanSerch} className="m-4 fa-2x" icon={faMagnifyingGlass} />
             <input id="inputSearch" className="form-input form-select fs-5 noticon w-auto " onInput={(e) => handleSearch(e)} placeholder='Buscar por signo..'>
-
             </input>
         </div>
-
     </div>
     )
 };
