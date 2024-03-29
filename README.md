@@ -1,8 +1,10 @@
 ## Challenge Landing Horóscopo
 
 ## EL CHALLENGE FRONT ESTA EN EL SIGUIENTE REPOSITORIO:
-( https://github.com/fcurrao/ejercicio-horoscopo-artear/blob/main/artear-ej/ejercicio-horoscopo-artear ) 
-O AVANCE POR LAS CARPETAS
+https://github.com/fcurrao/ejercicio-horoscopo-artear/blob/main/artear-ej/ejercicio-horoscopo-artear 
+
+O AVANCE POR LAS CARPETAS:
+ejercicio-horoscopo-artear/artear-ej/ejercicio-horoscopo-artear/
 
 
 ---
