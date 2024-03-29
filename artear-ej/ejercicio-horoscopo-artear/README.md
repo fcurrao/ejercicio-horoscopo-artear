@@ -99,14 +99,14 @@ Se testeo mediante Unit Testing probando no solo componente sino funciones y par
 
 ---
 ### Instalacion
-###Parte back
+### Parte back
 - Servidor: Instalar las dependencias del proyecto y ejecutar el script **npm start**. Luego se pueden obtener los datos.
 
 - Para obtener los datos se utiliza http://localhost:3001/zodiac_signs
 
 - La API posee una validación de las peticiones mediante el envío del header ***"Authorization"*** cuyo valor debe ser ***"qazwsx"***.
 
-###Parte Front
+### Parte Front
 - Instalar las dependencias del proyecto y luego ejecutar el script** npm run dev**.
 
 
