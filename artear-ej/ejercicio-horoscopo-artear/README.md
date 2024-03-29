@@ -1,10 +1,12 @@
 ## Challenge Landing Horóscopo
 
 
+
 ### Objetivo
 Se desea tener una página principal dónde leer las predicciones para los distintos signos del horóscopo. El equipo de backend desarrolló la API correspondiente para ser consumida desde el front-end
 
 User Story: Como usuario se quiere poder leer los datos del horóscopo.
+
 
 ### Instrucciones
 El aplicativo esta guionado por los wireframes correspondientes, dentro del proyecto.
@@ -24,6 +26,7 @@ Si se toca el icono de Grilla se ordena por lista y cambia el icono a Lista y si
 Tambien el icono de la lupita de Search , borra la busqueda.
 
 
+
 ---
 ### Librerias utilizadas
 react-router-dom
@@ -31,6 +34,7 @@ react-router-dom
 -D vitest 
 
 Boostrap (framework CSS )
+
  
 ### Rutas
 Navbar
@@ -39,12 +43,14 @@ Home/HorcopoContainer/HoroscopoList/DetailsHoroscopo
 
 Footer
 
+
 ### Tests
 Se utilizo vitest  para la realizacion de los test.
 
 Para realizar el test usar el script **npm run test**
 
 Se testeo mediante Unit Testing probando no solo componente sino funciones y partes del codigo
+
  
 ### Patrones de diseño utilizados
 - Render Props
@@ -52,6 +58,7 @@ Se testeo mediante Unit Testing probando no solo componente sino funciones y par
 - Componentes diferentes.
 
 - Context.
+
 
 ### Descripcion
 - Se creo una aplicacion en React JS utilizando Vite.
@@ -72,6 +79,7 @@ Se testeo mediante Unit Testing probando no solo componente sino funciones y par
 
 - Se pusheó a este repositorio privado para su revisión.
 
+
 ### Imagenes de Uso
 **Home del aplicativo (vista en grilla)**
 [![Home](https://imgbb.host/images/MIm6z.png "Home")](https://imgbb.host/images/MIm6z.png "Home")
@@ -88,6 +96,7 @@ Se testeo mediante Unit Testing probando no solo componente sino funciones y par
 **Error**
 [![Error](https://imgbb.host/images/MI8Vu.png "Error")](https://imgbb.host/images/MI8Vu.png "Error")
 
+
 ---
 ### Instalacion
 ###Parte back
@@ -99,6 +108,7 @@ Se testeo mediante Unit Testing probando no solo componente sino funciones y par
 
 ###Parte Front
 - Instalar las dependencias del proyecto y luego ejecutar el script** npm run dev**.
+
 
 
 ---
