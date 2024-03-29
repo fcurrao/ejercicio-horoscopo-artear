@@ -1,6 +1,12 @@
 ## Challenge Landing Horóscopo
 
-## EL CHALLENGE FRONT ESTA EN EL SIGUIENTE REPOSITORIO ( https://github.com/fcurrao/ejercicio-horoscopo-artear/blob/main/artear-ej/ejercicio-horoscopo-artear ) O AVANCE POR LAS CARPETAS
+## EL CHALLENGE FRONT ESTA EN EL SIGUIENTE REPOSITORIO:
+( https://github.com/fcurrao/ejercicio-horoscopo-artear/blob/main/artear-ej/ejercicio-horoscopo-artear ) 
+O AVANCE POR LAS CARPETAS
+
+
+---
+
 
 ### Objetivo
 Se desea tener una página principal dónde leer las predicciones para los distintos signos del horóscopo. El equipo de backend desarrolló la API correspondiente para ser consumida desde el front-end
