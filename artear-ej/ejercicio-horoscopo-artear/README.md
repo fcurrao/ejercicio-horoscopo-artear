@@ -27,33 +27,49 @@ Tambien el icono de la lupita de Search , borra la busqueda.
 ---
 ### Librerias utilizadas
 react-router-dom
+
 -D vitest 
+
 Boostrap (framework CSS )
  
 ### Rutas
 Navbar
+
 Home/HorcopoContainer/HoroscopoList/DetailsHoroscopo
+
 Footer
 
 ### Tests
 Se utilizo vitest  para la realizacion de los test.
+
 Para realizar el test usar el script **npm run test**
+
 Se testeo mediante Unit Testing probando no solo componente sino funciones y partes del codigo
  
 ### Patrones de diseño utilizados
 - Render Props
+
 - Componentes diferentes.
+
 - Context.
 
 ### Descripcion
 - Se creo una aplicacion en React JS utilizando Vite.
+
 - Se utilizó Hooks, como useEffect, useState, useContext
+
 - Se utilizó Boostrap (framework CSS ) para agilizar el estilo
+
 - Se utilizó diferentes formas de realizar distintas cosas , ejemplo estilos, funciones y rutas. Realizado aproposito para demostrar variantes
+
 - Se utilizó rutas en Link traido de la libreria react-router-dom
+
 - Se utilizó useParams  traido de la libreria react-router-dom
+
 - Se realizó test desarrollados en vitest para comprobar la utilidades de funciones y otros.
+
 - Se realizó el responsive
+
 - Se pusheó a este repositorio privado para su revisión.
 
 ### Imagenes de Uso
@@ -76,7 +92,9 @@ Se testeo mediante Unit Testing probando no solo componente sino funciones y par
 ### Instalacion
 ###Parte back
 - Servidor: Instalar las dependencias del proyecto y ejecutar el script **npm start**. Luego se pueden obtener los datos.
+
 - Para obtener los datos se utiliza http://localhost:3001/zodiac_signs
+
 - La API posee una validación de las peticiones mediante el envío del header ***"Authorization"*** cuyo valor debe ser ***"qazwsx"***.
 
 ###Parte Front
