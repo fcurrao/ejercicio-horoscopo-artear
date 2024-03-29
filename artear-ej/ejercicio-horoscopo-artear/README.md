@@ -7,12 +7,19 @@ User Story: Como usuario se quiere poder leer los datos del horóscopo.
 
 ### Instrucciones
 El aplicativo esta guionado por los wireframes correspondientes, dentro del proyecto.
+
 Una vez dentro del aplicativo tendras en el navbar las opciones para verlo como Lista o Grilla, ademas de eso se puede ordenar por Default ( donde se ubica primero el elemento del signo del horoscopo que corresponde con la fecha del dia de hoy), alfabeticamente o por fecha.
+
 Tambien se puede filtrar por signo desde la barra de busqueda.
+
 Se simulo un pequeño delay (visual) de un loading.
+
 Una vez elegido las caracteristicas requeridas se puede visualizar los horoscopos resultantes, donde al hacer click en alguno de ellos se abre el detalle del mismo.
+
 Ademas cuenta con un controlador de Error 404, donde cuando la ruta o la busqueda no de resultado alguna se informa con una pagina(componente) que asi lo informa.
+
 Si se toca el icono de Grilla se ordena por lista y cambia el icono a Lista y si se toca ese icono se ordena por Grilla.
+
 Tambien el icono de la lupita de Search , borra la busqueda.
 
 
