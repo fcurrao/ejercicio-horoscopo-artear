@@ -121,7 +121,7 @@ Se testeo mediante Unit Testing probando no solo componente sino funciones y par
 
 ---
 ###Colaboradores
-Agradezco la colaboracion de [Julieta Palma Schlaps](https://github.com/julipalma)
+Agradezco la colaboracion de [Pipiano Romagnoli](https://github.com/PRomagnoli)
 
 ##Creado por [fcurrao](https://github.com/fcurrao/ "fcurrao")
 
