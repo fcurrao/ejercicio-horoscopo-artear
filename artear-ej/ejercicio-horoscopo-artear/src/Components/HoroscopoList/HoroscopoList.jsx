@@ -16,8 +16,10 @@ export const HoroscopoList = ({ dataHoroscopo }) => {
                 {dataHoroscopo && dataHoroscopo.map((eachHoroscopo, index) => (
                     <>
                         {(index === 0) ?
-                            <>    <Link to={`/${eachHoroscopo.id}`} key={eachHoroscopo.id} className='card firstOne' >
-                                <img className='img w-15' src={"../../../public/" + eachHoroscopo.image} />
+                        // tambien se podria pasar al componente por parametros destructurados todos los datos y ponerlos en el DetailsHoroscopo
+                        //ejemplo <DetailsHoroscopo key={eachHoroscopo.id} {...eachHoroscopo}  />)}
+                        <>    <Link to={`/${eachHoroscopo.id}`} key={eachHoroscopo.id} className='card firstOne' >
+                                <img className='img w-15' src={`${import.meta.env.VITE_URL}/${eachHoroscopo.image}`} />
                                 <div className="col-md-8 d-flex align-items -center">
                                     <div className="card-body  d-flex flex-row flex-wrap justify-content-center align-items-center flex-column">
                                         <h4 className="card-title m-2 text-primary">{eachHoroscopo.name}</h4>
@@ -28,6 +30,8 @@ export const HoroscopoList = ({ dataHoroscopo }) => {
                             </Link>
                             </>
                             :
+                            // tambien se podria pasar al componente por parametros destructurados todos los datos y ponerlos en el DetailsHoroscopo
+                            //ejemplo <DetailsHoroscopo key={eachHoroscopo.id} {...eachHoroscopo}  />)}
                             <>
                                 <Link to={`/${eachHoroscopo.id}`} key={eachHoroscopo.id} className={`card ${valueViewBy === 'grilla' ? ' othersElementsInGrid' : 'othersElementsInList'}`}>
                                     <div className={` ${valueViewBy === 'grilla' ? 'd-flex align-items-center flex-column justify-content-center ' : ''}  h-fit-content row g-0 p-2`} >
@@ -35,7 +39,7 @@ export const HoroscopoList = ({ dataHoroscopo }) => {
                                             <h4 className="card-title m-2">{eachHoroscopo.name}</h4>
 
                                             <div>
-                                                <img style={{ width: "25%" }} className='img m-2 ' src={"../../../public/" + eachHoroscopo.image} alt={eachHoroscopo.name} />
+                                                <img style={{ width: "25%" }} className='img m-2 ' src={`${import.meta.env.VITE_URL}/${eachHoroscopo.image}`} alt={eachHoroscopo.name} />
                                             </div>
                                         </div>
                                         <div className="col-md-8 d-flex align-items-center align-items-center">

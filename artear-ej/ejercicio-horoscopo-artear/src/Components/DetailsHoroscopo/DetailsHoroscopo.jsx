@@ -1,34 +1,20 @@
 
 
 import { useParams, Link } from 'react-router-dom'
-import { useEffect, useState } from 'react';
+import { useEffect, useContext } from 'react';
+import { HoroscopoContext } from "../../context/HoroscopoContextProvider.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import './DetailsHoroscopo.css'
 
+// Si hubiera pasado los datos por parametros lo destructuraria asi :
+//  export const DetailsHoroscopo = ({ id, name, prediction, , end_date, init_date, img, }) => {
 export const DetailsHoroscopo = () => {
+    
+    const {getDataById, thisHoroscopo} = useContext(HoroscopoContext);
     const { id } = useParams()
-    const [thisHoroscopo, setThisHoroscopo] = useState("")
-    // estos datos sensibles se deberian de guardar en una archivo de variables
-    const URL = 'http://localhost:3001';
-    const DATA = 'zodiac_signs';
 
 
-    // traigo por id conseguido por useParams de la api : el objeto indicado y lo cargo en setThisHoroscopo
-    async function getDataById() {
-        try {
-            const response = await fetch(`${URL}/${DATA}/${id}`, {
-                headers: {
-                    'Authorization': 'qazwsx'
-                }
-            });
-            const data = await response.json();
-            setThisHoroscopo(data)
-        } catch (error) {
-            console.error(`Error trayendo la data en la ruta ${URL}/${DATA}/${id}`, error);
-            return Promise.reject(error);
-        }
-    }
 
     useEffect(() => {
         getDataById(id);
@@ -38,7 +24,7 @@ export const DetailsHoroscopo = () => {
     return (
         <>
             <div className='card p-0 d-flex flex-row flex-wrap m-2 border-3 border-dark shadow-lg mb-5 bg-body  rounded justify-content-between text-black' >
-                <div className="card-body d-flex flex-row flex-wrap justify-content-center align-items-center" style={{ backgroundImage: `url(../../../public/${thisHoroscopo.image})`, backgroundSize: 'contain', backgroundPosition: 'center', width: "126%", height: "auto" }}>
+                <div className="card-body d-flex flex-row flex-wrap justify-content-center align-items-center" style={{ backgroundImage: `url(${import.meta.env.VITE_URL}/${thisHoroscopo.image})`, backgroundSize: 'contain', backgroundPosition: 'center', width: "126%", height: "auto" }}>
                     <div className="col-md-8 d-flex align-items -center ">
                         <div className="card-body  d-flex flex-row flex-wrap justify-content-center align-items-center effecttext">
                             <h1 className="card-title m-2">{thisHoroscopo.name}</h1>

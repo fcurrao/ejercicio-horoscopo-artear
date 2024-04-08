@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext } from "react";
 import { NotFound } from "../NotFound/NotFound.jsx"
 import { HoroscopoList } from "../HoroscopoList/HoroscopoList.jsx";
 import { HoroscopoContext } from "../../context/HoroscopoContextProvider.jsx";
@@ -7,13 +7,8 @@ import "./HoroscopoListContainer.css";
 
 
 export const HoroscopoListContainer = () => {
-    const { valueOrderBy, searchHoroscopo } = useContext(HoroscopoContext);
-    const [isLoading, setIsLoading] = useState(true);
-    const [dataBySearch, setDataBySearch] = useState([]);
-    const [dataHoroscopo, setDataHoroscopo] = useState([]);
-    // estos datos sensibles se deberian de guardar en una archivo de variables
-    const URL = 'http://localhost:3001';
-    const DATA = 'zodiac_signs';
+    const {valueOrderBy,getDataHoroscopoByApi ,searchHoroscopo, dataHoroscopo , setDataHoroscopo, isLoading, setIsLoading,dataBySearch, setDataBySearch, } = useContext(HoroscopoContext);
+
 
     // funcion que se le pasa el valor de la busqueda en la searchbar y  lo filtro para encontrar los que tienen incluido en su nombre el valor de la busqueda 
     // (ej: "ta" => Tauro y Sagitario)
@@ -29,6 +24,7 @@ export const HoroscopoListContainer = () => {
     // funcion que formatea  la fecha de hoy y tambien de init_date y end_date 
     // si la fecha de hoy esta dentro de los rangos la coloco primera
     const moveTodayToFirst = (data) => {
+        
         const today = new Date();
         const formattedToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
         // formateo las init_date y end_date, luego busco la fecha de hoy  que este entre estas dos fechas
@@ -78,31 +74,22 @@ export const HoroscopoListContainer = () => {
         }
     }
 
-    async function getDataHoroscopoByApi() {
-        try {
-            const response = await fetch(`${URL}/${DATA}`, {
-                headers: {
-                    'Authorization': 'qazwsx'
-                }
-            });
-            const data = await response.json();
-            const horoscopoInOrden = moveTodayToFirst(data);
-            setDataHoroscopo(horoscopoInOrden);
-            setDataBySearch(horoscopoInOrden);
-            setTimeout(() => {
-                setIsLoading(false)
-            }, 1600);
-        } catch (error) {
-            console.error(`Error trayendo la data en la ruta ${URL}/${DATA}`, error);
-            return Promise.reject(error);
-        }
+    async function initHoroscopo() {
+        const data =  await getDataHoroscopoByApi()
+        const horoscopoInOrden = moveTodayToFirst(data);
+        setDataHoroscopo(horoscopoInOrden);
+        setDataBySearch(horoscopoInOrden);
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 1600);
     }
 
-
-    useEffect(() => {
-        getDataHoroscopoByApi()
+   // se inicia la pagina trayendo la pagina
+    useEffect( () => { 
+        initHoroscopo()
     }, []);
 
+    // cuando cambian parametros de busqueda se ejecuta los filtros
     useEffect(() => {
         ordenSetting();
         searchbarHoroscopo(searchHoroscopo);
