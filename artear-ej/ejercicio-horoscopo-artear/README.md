@@ -19,11 +19,17 @@ Se simulo un pequeño delay (visual) de un loading.
 
 Una vez elegido las caracteristicas requeridas se puede visualizar los horoscopos resultantes, donde al hacer click en alguno de ellos se abre el detalle del mismo.
 
-Ademas cuenta con un controlador de Error 404, donde cuando la ruta o la busqueda no de resultado alguna se informa con una pagina(componente) que asi lo informa.
+Cuenta con un selector de categorias donde se podra filtrar la categoria a gusto.
+
+Ademas cuenta con un controlador de Errores, donde cuando la ruta o la busqueda no de resultado alguna se informa con una pagina(componente) que asi lo informa.
 
 Si se toca el icono de Grilla se ordena por lista y cambia el icono a Lista y si se toca ese icono se ordena por Grilla.
 
 Tambien el icono de la lupita de Search , borra la busqueda.
+
+- Las variables de entorno son: (.env)
+VITE_URL = 'http://localhost:3001'
+VITE_DATA = 'zodiac_signs'
 
 
 
@@ -120,6 +126,10 @@ Se testeo mediante Unit Testing probando no solo componente sino funciones y par
 - Para obtener los datos se utiliza http://localhost:3001/zodiac_signs
 
 - La API posee una validación de las peticiones mediante el envío del header ***"Authorization"*** cuyo valor debe ser ***"qazwsx"***.
+
+- Las variables de entorno son: (.env)
+VITE_URL = 'http://localhost:3001'
+VITE_DATA = 'zodiac_signs'
 
 ### Parte Front
 - Instalar las dependencias del proyecto y luego ejecutar el script** npm run dev**.
