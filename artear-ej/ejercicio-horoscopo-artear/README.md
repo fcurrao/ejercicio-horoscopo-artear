@@ -57,6 +57,8 @@ Se testeo mediante Unit Testing probando no solo componente sino funciones y par
 
 - Componentes diferentes.
 
+- Custom Hooks 
+
 - Context.
 
 
@@ -76,6 +78,8 @@ Se testeo mediante Unit Testing probando no solo componente sino funciones y par
 - Se realizó test desarrollados en vitest para comprobar la utilidades de funciones y otros.
 
 - Se realizó el responsive
+
+- Se optimizo manejo de errores
 
 - Se pusheó a este repositorio privado para su revisión.
 
