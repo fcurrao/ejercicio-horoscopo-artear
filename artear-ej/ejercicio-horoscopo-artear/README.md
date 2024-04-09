@@ -138,7 +138,8 @@ VITE_DATA = 'zodiac_signs'
 
 ---
 ###Colaboradores
-Agradezco la colaboracion de [Julieta Palma Schlaps](https://github.com/julipalma)
+
+Agradezco la colaboracion de [Julieta Palta](https://github.com/julipalta)
 
 ##Creado por [fcurrao](https://github.com/fcurrao/ "fcurrao")
 
