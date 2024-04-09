@@ -3,7 +3,7 @@ import { HoroscopoContextProvider } from "./context/HoroscopoContextProvider.jsx
 import { Home } from "./Components/Home/Home.jsx";
 import { Navbar } from "./Components/Navbar/Navbar.jsx";
 import { DetailsHoroscopo } from "./Components/DetailsHoroscopo/DetailsHoroscopo.jsx";
-import { NotFound } from "./Components/NotFound/NotFound.jsx";
+import { Error } from "./Components/Error/Error.jsx";
 import { Footer } from "./Components/Footer/Footer.jsx";
 import './App.css'
 
@@ -17,8 +17,9 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/category/:category" element={<Home />} />
             <Route path="/:id" element={<DetailsHoroscopo />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<Error />} />
           </Routes>
           <Footer />
         </BrowserRouter>
