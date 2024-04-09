@@ -33,15 +33,15 @@ export const DetailsHoroscopo = () => {
                         <div className="card-body d-flex flex-row flex-wrap justify-content-center align-items-center" style={{ backgroundImage: `url(${import.meta.env.VITE_URL}/${thisHoroscopo.image})`, backgroundSize: 'contain', backgroundPosition: 'center', width: "126%", height: "auto" }}>
                             <div className="col-md-8 d-flex align-items -center ">
                                 <div className="card-body  d-flex flex-row flex-wrap justify-content-center align-items-center effecttext">
-                                    <h1 className="card-title m-2">{thisHoroscopo.name}</h1>
-                                    <p className="card-text fs-3">{thisHoroscopo.prediction}</p>
-                                    <span >{thisHoroscopo.init_date} &nbsp; ~ &nbsp; {thisHoroscopo.end_date}</span>
+                                    <h2 className="card-title m-2">{thisHoroscopo.name}</h2>
+                                    <p className="card-text fs-4">{thisHoroscopo.prediction}</p>
+                                    <span className='fs-5'>{thisHoroscopo.init_date} &nbsp; ~ &nbsp; {thisHoroscopo.end_date}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className='d-flex justify-content-center m-4'>
-                        <Link className='btn-success text-black w-25 border p-3 bg-info  d-flex align-items-center justify-content-center m-4' to="/">
+                        <Link className='btn-success text-black w-25 border bg-info  d-flex align-items-center justify-content-center m-4' to="/">
                             <FontAwesomeIcon icon={faArrowLeft} />
                             <span style={{ marginLeft: "5%", fontSize: "24px" }}>Volver</span>
                         </Link>

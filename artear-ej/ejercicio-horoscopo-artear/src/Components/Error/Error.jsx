@@ -8,8 +8,7 @@ export const Error = ({ id, code, title, subtitle }) => {
     const handleErrorTitles = () => {
         if (title === undefined && subtitle === undefined) {
             let newTitle = "";
-            let newSubtitle = "";
-            console.warn(code)
+            let newSubtitle = ""; 
             switch (code) {
                 case 401:
                     newTitle = `Error de Autorización ${code}`;
@@ -44,7 +43,7 @@ export const Error = ({ id, code, title, subtitle }) => {
 
     return (
         <>
-            <div style={{ height: "auto" }} className="bg-light align-content-center fs-3 fw-bold p-5">
+            <div style={{ height: "auto" }} className="bg-light align-content-center fs-4 fw-bold p-5">
                 <h2>{titleLocal}  {title}</h2>
                 <h3>{subtitleLocal}  {subtitle}</h3>
                 <img style={{ width: "50%", margin: "5%" }} src="../../../public/error.png" />

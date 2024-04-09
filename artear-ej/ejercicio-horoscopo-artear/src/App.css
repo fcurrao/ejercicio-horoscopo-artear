@@ -4,10 +4,11 @@
   left: 0;
   right: 0;
   margin: auto;
-  padding: 1% 6%;
+  padding: 1% 2%;
   text-align: center;
   width: 100%;
 }
+
 
 @media (max-width: 768px) {
 

@@ -37,8 +37,7 @@ export const Navbar = () => {
         setCategorySelected(e.target.value)
     };
 
-    useEffect(() => {
-        console.warn("asc")
+    useEffect(() => { 
         cleanSerch()
     }, [categorySelected])
 

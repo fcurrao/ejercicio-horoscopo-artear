@@ -44,7 +44,7 @@ export const HoroscopoListContainer = () => {
 
     // primero manejo pantallas de errores  
     return (
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="d-flex flex-wrap justify-content-center min-vh-100">
 
             {errorApi !== null ? (
                 <Error id="1" code={errorApi} />

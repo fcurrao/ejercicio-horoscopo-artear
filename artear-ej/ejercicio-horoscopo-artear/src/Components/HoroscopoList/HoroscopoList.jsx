@@ -28,9 +28,9 @@ export const HoroscopoList = ({ dataHoroscopo }) => {
                                 <img className='img w-15' src={`${import.meta.env.VITE_URL}/${eachHoroscopo.image}`} />
                                 <div className="col-md-8 d-flex align-items -center">
                                     <div className="card-body  d-flex flex-row flex-wrap justify-content-center align-items-center flex-column">
-                                        <h3 className="card-title m-2 text-primary">{eachHoroscopo.name}</h3>
-                                        <h5 style={{ color: "gray" }}> {eachHoroscopo.category}</h5>
-                                        <p className="card-text fs-6">{eachHoroscopo.prediction}</p>
+                                        <h5 className="card-title m-2 text-primary">{eachHoroscopo.name}</h5>
+                                        <h5 style={{ color: "gray" , fontSize: "14px"}}> {eachHoroscopo.category}</h5>
+                                        <p  style={{ fontSize: "14px" }} className="card-text m-1">{eachHoroscopo.prediction}</p>
                                         <span style={{ color: 'gray' }}>{eachHoroscopo.init_date} &nbsp; ~ &nbsp; {eachHoroscopo.end_date}</span>
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@ export const HoroscopoList = ({ dataHoroscopo }) => {
                                 <Link to={`/${eachHoroscopo.id}`} key={eachHoroscopo.id} className={`card ${valueViewBy === 'grilla' ? ' othersElementsInGrid' : 'othersElementsInList'}`}>
                                     <div className={` ${valueViewBy === 'grilla' ? 'd-flex align-items-center flex-column justify-content-center ' : ''}  h-fit-content row g-0 p-2`} >
                                         <div className="col-md-4 justify-content-center d-flex flex-column  align-items-center ">
-                                            <h4 className="card-title m-2">{eachHoroscopo.name}</h4>
+                                            <h5 className="card-title m-2">{eachHoroscopo.name}</h5>
 
                                             <div>
                                                 <img style={{ width: "25%" }} className='img m-2 ' src={`${import.meta.env.VITE_URL}/${eachHoroscopo.image}`} alt={eachHoroscopo.name} />
@@ -51,8 +51,8 @@ export const HoroscopoList = ({ dataHoroscopo }) => {
                                         </div>
                                         <div className="col-md-8 d-flex align-items-center align-items-center">
                                             <div className="card-body  flex-row flex-wrap justify-content-center">
-                                                <h5 style={{ color: "gray" }}> {eachHoroscopo.category}</h5>
-                                                <p className="card-text fs-6 p-3">{eachHoroscopo.prediction}</p>
+                                                <h5 style={{ color: "gray", fontSize: "14px" }}> {eachHoroscopo.category}</h5>
+                                                <p  style={{ fontSize: "14px" }} className="card-text m-1">{eachHoroscopo.prediction}</p>
                                                 <span style={{ color: 'gray' }}>{eachHoroscopo.init_date} &nbsp; ~ &nbsp; {eachHoroscopo.end_date}</span>
                                             </div>
                                         </div>
